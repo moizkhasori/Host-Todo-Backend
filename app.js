@@ -7,10 +7,10 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors(
-    origin: 'https://main--fabulous-paletas-de85bb.netlify.app/',
+app.use(cors({
+    origin: 'https://main--fabulous-paletas-de85bb.netlify.app',
     credentials:true
-))
+}))
 
 // routes import
 import userRouter from "./Routes/Users/userRoute.js"
