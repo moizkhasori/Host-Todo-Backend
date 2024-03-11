@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: 'https://fabulous-paletas-de85bb.netlify.app/',
+    origin: 'https://fabulous-paletas-de85bb.netlify.app',
     credentials:true
 }))
 
