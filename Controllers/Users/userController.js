@@ -47,7 +47,11 @@ export const handleLoginUser = AsyncMiddleware(async (req,res,next) => {
 export const handleLogoutUser = AsyncMiddleware(async (req,res,next) => {
 
     const options = {
-        expires: new Date(Date.now()),
+        expires: new Date(0), // Set expiration date to a past date
+        httpOnly: true, // Include any other cookie options you originally used
+        secure: true, // Include if the cookie was originally set with secure: true
+        sameSite: 'None' // Include if the cookie was originally set with SameSite=None
+        // Add any other options you used when setting the cookie
     }
 
     res.status(200).cookie("token",null,options).json({
