@@ -7,7 +7,12 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
+app.use(cors(
+  app.use(cors({
+    origin: 'https://host-todo-backend.onrender.com',
+    credentials:true
+}))
+))
 
 // routes import
 import userRouter from "./Routes/Users/userRoute.js"
